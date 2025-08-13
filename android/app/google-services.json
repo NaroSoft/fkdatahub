@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "88070435641",
+    "project_id": "fkdatahub1",
+    "storage_bucket": "fkdatahub1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88070435641:android:8b8424c844386e5d86eee8",
+        "android_client_info": {
+          "package_name": "com.example.fkdatahub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA87yRQXG4ix4NcRggjNYdS5Iej2yWR6-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

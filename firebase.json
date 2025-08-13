@@ -1,0 +1,36 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "fkdatahub1",
+          "appId": "1:88070435641:android:8b8424c844386e5d86eee8",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "fkdatahub1",
+          "configurations": {
+            "android": "1:88070435641:android:8b8424c844386e5d86eee8",
+            "ios": "1:88070435641:ios:6b41cbe355b2c97c86eee8",
+            "macos": "1:88070435641:ios:6b41cbe355b2c97c86eee8",
+            "web": "1:88070435641:web:013e908f8263ca2886eee8",
+            "windows": "1:88070435641:web:a9585c00e6680d3a86eee8"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "source": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "region": "us-west1"
+    }
+  }
+}
