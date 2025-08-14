@@ -245,11 +245,9 @@ class _MobileDashState extends State<MobileDash> {
           return AlertDialog(content: StatefulBuilder(
               builder: (BuildContext context, StateSetter setDialogState) {
             return SizedBox(
-              width:  MediaQuery.of(context).size.width * 0.8,
-                height:  MediaQuery.of(context).size.height * 0.9,
-                child: Column(
-              //ainAxisAlignment: MainAxisAlignment.center,
-              //mainAxisSize: MainAxisSize.min,
+                // height: MediaQuery.of(context).size.height * 0.6,
+                child:  Column(
+                  mainAxisSize: MainAxisSize.min,
               children: [
                 Row(
                   children: [

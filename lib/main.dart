@@ -1,5 +1,5 @@
 import 'dart:ui';
-//import 'dart:html' as html;
+import 'dart:html' as html;
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -16,7 +16,7 @@ import 'package:lottie/lottie.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 
-const String currentVersion = '1.0.5'; // Update with your app's version
+const String currentVersion = '1.0.6'; // Update with your app's version
 
 Future<void> autoUpdateWebApp() async {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -25,7 +25,7 @@ Future<void> autoUpdateWebApp() async {
     if (snapshot.exists) {
       String latestVersion = snapshot['version'];
       if (latestVersion != currentVersion) {
-       // html.window.location.reload(); // Reload the web app only once
+        html.window.location.reload(); // Reload the web app only once
       }
     }
   } catch (e) {
