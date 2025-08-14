@@ -4,7 +4,7 @@ import 'dart:async';
 
 class PaystackService {
   // Replace with your actual Paystack public key
-  static const String publicKey = 'sk_live_59d6bddaaa94d236357b5ad260de55c38d28c0a5';
+  static const String publicKey = '';
   
   static Future<Map<String, dynamic>> makePayment({
     required double amount,
@@ -41,7 +41,7 @@ class PaystackService {
       // Set up Paystack payment
       js.context.callMethod('eval', ['''
         var handler = PaystackPop.setup({
-          key: 'sk_live_59d6bddaaa94d236357b5ad260de55c38d28c0a5',
+          key: '',
           email: '$email',
           amount: $amountInPesewas,
           currency: 'GHS',
