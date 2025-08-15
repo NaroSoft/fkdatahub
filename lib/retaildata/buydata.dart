@@ -90,7 +90,8 @@ class _BuydataState extends State<Buydata> {
       ),
      
       body: Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20, top: 8.0, bottom: 8.0),
+                padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width * 0.1, right:MediaQuery.of(context).size.width * 0.1, top: 8.0, bottom: 8.0),
                 child:  Column(
                     // mainAxisSize: MainAxisSize.min,
                     //crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,7 +100,7 @@ class _BuydataState extends State<Buydata> {
                       alignment: Alignment.center,
                       child: Text(
                         widget.mytitle=="AFA"?"MTN AFA MINUTES":
-                        "${widget.mytitle} DATA Bundle",
+                        "${widget.mytitle} Non-Expiry Bundles",
                         style: TextStyle(
                           fontSize: 23,
                           color: widget.mytitle == "AFA"
@@ -160,7 +161,7 @@ class _BuydataState extends State<Buydata> {
                             builder: (BuildContext context) {
                               return AlertDialog(content: StatefulBuilder(
                                   builder: (BuildContext context,
-                                      StateSetter setState) {
+                                      StateSetter setDelState) {
                                 return SizedBox(
               width:  MediaQuery.of(context).size.width * 0.8,
                 height: MediaQuery.of(context).size.height * 0.9,
@@ -375,8 +376,9 @@ class _BuydataState extends State<Buydata> {
                                                         //print(title2);
                                                         Navigator.of(context)
                                                             .pop();
-                                                        Navigator.of(context)
-                                                            .pop();
+                                                            print(title2);
+                                                       // Navigator.of(context)
+                                                         //   .pop();
                                                        
                                                       },
                                                       child: Card(
@@ -486,11 +488,11 @@ class _BuydataState extends State<Buydata> {
                                                           buyprice= _pricelist[index]
                                                                   ["buy_price"];
                                                         });
-                                                        //print(title2);
+                                                        print(title2);
                                                         Navigator.of(context)
                                                             .pop();
-                                                        Navigator.of(context)
-                                                            .pop();
+                                                        //Navigator.of(context)
+                                                         //   .pop();
                                                       
                                                             //showPayInfoDialog();
                                                       },

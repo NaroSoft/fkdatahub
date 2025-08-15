@@ -194,10 +194,10 @@ class _PayPageState extends State<PayPage> {
                                     .whenComplete(() {
                                       //success = true;
 
-                                      if (mounted) {
+                                     // if (mounted) {
                                         Navigator.of(context).pop(); // Close processing dialog
                                         showSuccessDialog1(widget.netimage, widget.reference, widget.mytitle);
-                                      }
+                                     // }
                                     });
         }
           
@@ -325,8 +325,9 @@ class _PayPageState extends State<PayPage> {
                 builder: (BuildContext context, StateSetter setDialogState) {
               return SizedBox(
               width:  MediaQuery.of(context).size.width * 0.8,
-                height: MediaQuery.of(context).size.height * 0.9,
+                //height: MediaQuery.of(context).size.height * 0.9,
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                 children: [
                   Card(
                   ///  color: mytitle == "MTN"
@@ -504,7 +505,7 @@ class _PayPageState extends State<PayPage> {
                   
                   Navigator.pop(context);
                   Navigator.pop(context);
-                  //Navigator.pop(context);
+                  Navigator.pop(context);
                 },
                 child: const Text(
                   'Close',
@@ -528,8 +529,6 @@ class _PayPageState extends State<PayPage> {
 
   void _startPayment() {
    
-
-
     // Paystack expects the smallest unit (kobo for NGN): multiply by 100
     final int amountInKobo = (widget.amount * 100).round();
 
@@ -583,7 +582,7 @@ class _PayPageState extends State<PayPage> {
                   _buildRow('Cost (GHS)', widget.amount.toString()),
                   const SizedBox(height: 20),
                   FilledButton(
-                    onPressed: () => _startPayment(),
+                    onPressed: _startPayment,
                     style: FilledButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(
@@ -614,7 +613,7 @@ class _PayPageState extends State<PayPage> {
               style: const TextStyle(fontSize: 14, color: Color.fromARGB(255, 119, 117, 117))),
           Text(value,
               style:
-                  const TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+                  const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
         ],
       ),
     );

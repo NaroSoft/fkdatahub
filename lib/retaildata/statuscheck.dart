@@ -127,7 +127,23 @@ class _SearchPageState extends State<STATUSCHECK> {
                                     .doc(initdata[k]["reference"])
                                     .update(orderlist);
 
-      } 
+      } else{
+          _results.add({
+          "receiver": initdata[k]["receiver"],
+          "alert_sms": initdata[k]["alert_sms"],
+          "amount": initdata[k]["amount"],
+          "buy_price": initdata[k]["buy_price"],
+          "full_date": initdata[k]["full_date"],
+          "month_no": initdata[k]["month_no"],
+          "network": initdata[k]["network"],
+          "price": initdata[k]["price"],
+          "profit": initdata[k]["profit"],
+          "reference": initdata[k]["reference"],
+          "status": "pending",
+          "time": initdata[k]["time"],
+          "year": initdata[k]["year"],
+      });
+      }
     } catch (e) {
       print("Error: $e");
     }
