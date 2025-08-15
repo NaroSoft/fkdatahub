@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:fkdatahub/retaildata/afaregistration.dart';
+import 'package:fkdatahub/retaildata/buydata.dart';
 import 'package:fkdatahub/retaildata/contactus.dart';
 import 'package:fkdatahub/retaildata/payment/payment_page.dart';
 import 'package:fkdatahub/retaildata/payment/webpay.dart';
@@ -2554,7 +2555,12 @@ class _MobileDashState extends State<MobileDash> {
         print(_pricelist.length.toString());
       }
       Navigator.of(context).pop();
-      buyBundleDialog("mtn1.png", "MTN");
+      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Buydata(
+        netimage: "mtn1.png",
+        mytitle: "MTN",
+        pricelist: _pricelist
+      )));
+      //buyBundleDialog("mtn1.png", "MTN");
     } else {
       throw showSuccessDialog('Code Error: ${response.statusCode}');
       //throw Exception('Code Error: ${response.statusCode}');
@@ -2718,7 +2724,12 @@ class _MobileDashState extends State<MobileDash> {
       setState(() {
         selbtn = "ishare";
       }); 
-      buyBundleDialog("airtel2.jpeg", "AIRTELTIGO");
+      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Buydata(
+        netimage: "airtel2.jpeg",
+        mytitle: "AIRTELTIGO",
+        pricelist: _pricelist
+      )));
+      //buyBundleDialog("airtel2.jpeg", "AIRTELTIGO");
     } else {
       Navigator.of(context).pop();
       showSuccessDialog('Code Error: ${response.statusCode}');
@@ -2890,7 +2901,12 @@ class _MobileDashState extends State<MobileDash> {
       }
       
       Navigator.of(context).pop();
-      buyBundleDialog("telecel1.png", "TELECEL");
+      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Buydata(
+        netimage: "telecel1.png",
+        mytitle: "TELECEL",
+        pricelist: _pricelist
+      )));
+      //buyBundleDialog("telecel1.png", "TELECEL");
     } else {
       Navigator.of(context).pop();
       showSuccessDialog('Code Error: ${response.statusCode}');
@@ -3113,7 +3129,12 @@ class _MobileDashState extends State<MobileDash> {
       }
       
       Navigator.of(context).pop();
-      buyBundleDialog("speak.png", "AFA");
+      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Buydata(
+        netimage: "speak.png",
+        mytitle: "AFA",
+        pricelist: _pricelist
+      )));
+     // buyBundleDialog("speak.png", "AFA");
     } else {
       Navigator.of(context).pop();
       //showSuccessDialog('Code Error: ${response.statusCode}');
