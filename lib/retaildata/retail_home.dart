@@ -244,13 +244,16 @@ class _MobileDashState extends State<MobileDash> {
         builder: (BuildContext context) {
           return AlertDialog(content: StatefulBuilder(
               builder: (BuildContext context, StateSetter setDialogState) {
-            return SizedBox(
-                // height: MediaQuery.of(context).size.height * 0.6,
+            return SingleChildScrollView(
+                  child:SizedBox(
+              width:  MediaQuery.of(context).size.width * 0.8,
+                height:  MediaQuery.of(context).size.height * 0.9,
                 child:  Column(
-                  mainAxisSize: MainAxisSize.min,
-              children: [
-                Row(
-                  children: [
+                    // mainAxisSize: MainAxisSize.min,
+                    //crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
                     Expanded(
                         child: Align(
                       alignment: Alignment.centerLeft,
@@ -1311,7 +1314,7 @@ class _MobileDashState extends State<MobileDash> {
                   ),
                 )),
               ],
-            ));
+            )));
           }));
         });
   }

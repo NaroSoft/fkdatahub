@@ -16,7 +16,7 @@ import 'package:lottie/lottie.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 
-const String currentVersion = '1.0.6'; // Update with your app's version
+/*const String currentVersion = '1.0.6'; // Update with your app's version
 
 Future<void> autoUpdateWebApp() async {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -31,17 +31,17 @@ Future<void> autoUpdateWebApp() async {
   } catch (e) {
     print('Error checking for updates: $e');
   }
-}
+}*/
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  if (kIsWeb) {
-    await autoUpdateWebApp(); // Only run on web
+  //if (kIsWeb) {
+   // await autoUpdateWebApp(); // Only run on web
    
-  }
+// }
   runApp(const MyApp());
 
 }
