@@ -242,9 +242,18 @@ class _MobileDashState extends State<MobileDash> {
         context: context,
         barrierDismissible: false,
         builder: (BuildContext context) {
-          return AlertDialog(content: StatefulBuilder(
+          return AlertDialog(
+            insetPadding: const EdgeInsets.all(16),
+            content: StatefulBuilder(
               builder: (BuildContext context, StateSetter setDialogState) {
-            return SingleChildScrollView(
+                final screenHeight = MediaQuery.of(context).size.height;
+            return ConstrainedBox(
+            constraints: BoxConstraints(
+              // limit the dialog height so it adjusts when keyboard appears
+              maxHeight: screenHeight * 0.9,
+              maxWidth: 400, // optional for web
+            ),
+            child: SingleChildScrollView(
                   child:SizedBox(
               width:  MediaQuery.of(context).size.width * 0.8,
                 height:  MediaQuery.of(context).size.height * 0.9,
@@ -1314,7 +1323,7 @@ class _MobileDashState extends State<MobileDash> {
                   ),
                 )),
               ],
-            )));
+            ))));
           }));
         });
   }
