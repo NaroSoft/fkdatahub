@@ -107,8 +107,8 @@ class _PayPageState extends State<PayPage> {
   StreamSubscription<html.MessageEvent>? _sub;
 
   // TODO: replace with your real Paystack public key (never use secret key on client!)
-  //static const String paystackPublicKey = 'pk_live_56b9072d3c335843d4aba985843cd4704d4dbf86';
-    static const String paystackPublicKey = 'pk_test_026ea4ed024876de980a1a7244ca49a748fd825c';
+  static const String paystackPublicKey = 'pk_live_56b9072d3c335843d4aba985843cd4704d4dbf86';
+    //static const String paystackPublicKey = 'pk_test_026ea4ed024876de980a1a7244ca49a748fd825c';
   showDialogProcessing() {
     return showDialog(
         context: context,

@@ -2970,11 +2970,11 @@ class _MobileDashState extends State<MobileDash> {
                           ),
                           Expanded(
                               child: InkWell(
-                                  //onTap: () => comingSoonDialog(
-                                    //  "Agent Portal Closed. Opening Soon!!!"),
-                                    onTap: (){
-                                      Navigator.of(context).push(MaterialPageRoute(builder: ((context)=>const RegistrationScreen())));
-                                    },
+                                  onTap: () => comingSoonDialog(
+                                      "AFA Registration On the way. Watch Out Soon!!!"),
+                                   // onTap: (){
+                                    //  Navigator.of(context).push(MaterialPageRoute(builder: ((context)=>const RegistrationScreen())));
+                                 //   },
                                   child: Card(
                                     color: Colors.white,
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -3037,7 +3037,9 @@ class _MobileDashState extends State<MobileDash> {
                           Expanded(
                               child: InkWell(
                                   onTap: () async {
-  setState(() {
+                                    comingSoonDialog(
+                                      "AFA Minutes Will be In Soon!!!");
+  /*setState(() {
     amountlist = [];
     _pricelist = [];
   });
@@ -3144,7 +3146,7 @@ class _MobileDashState extends State<MobileDash> {
     Navigator.of(context).pop();
     showSuccessDialog('No Internet Connection. Check your networks connectivity and Retry');
     print("Error: $e");
-  }
+  }*/
 },
                                   child: Card(
                                     color: Colors.yellow,
