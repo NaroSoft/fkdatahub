@@ -124,7 +124,7 @@ class _BuydataState extends State<Buydata> {
                   height: 10,
                 ),
                 Expanded(
-                    child: SingleChildScrollView(
+                    child: Container(child: SingleChildScrollView(
                   child: Column(
                     children: [
                       Center(
@@ -1126,7 +1126,7 @@ class _BuydataState extends State<Buydata> {
                       const SizedBox(height: 20.0),
                     ],
                   ),
-                )),
+                ))),
               ],
             ))
     );

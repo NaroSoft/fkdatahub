@@ -201,7 +201,7 @@ class _PayPageState extends State<PayPage> {
                                     });
         }
           
-      } else {
+      else {
           const String authToken =
                                 "4|0B7htFoaRvAqWEO92DPI5F2H48Vc8PT3Hknh0quF10715605"; // Replace with your API key
 
@@ -298,6 +298,49 @@ class _PayPageState extends State<PayPage> {
                               }
                               //throw Exception('Network error: $e');
                             }
+      }
+      }else{
+        //
+        Map<String, dynamic> orderlist =
+                                    new Map<String, dynamic>();
+
+                                orderlist["network"] = widget.network;
+                                orderlist["receiver"] = widget.receiver;
+                                orderlist["reference"] = widget.reference;
+                                orderlist["amount"] = widget.capacity;
+                                orderlist["price"] = widget.amount;
+                                orderlist["alert_sms"] = widget.alert_sms;
+                                orderlist["buy_price"] = widget.buy_price;
+                                orderlist["profit"] = widget.profit;
+                                orderlist["status"] = "pending";
+                                orderlist["walletstatus"] = "unavailable";
+                                orderlist["full_date"] = DateFormat("EEE, MMM d, yyyy")
+                                    .format(DateTime.now());
+                                orderlist["date"] = DateFormat("dd-MM-yyyy")
+                                    .format(DateTime.now());
+                                orderlist["day"] = num.tryParse(DateFormat("d")
+                                    .format(DateTime.now()));
+                                orderlist["month_no"] = num.tryParse(DateFormat("M")
+                                    .format(DateTime.now()));
+                                orderlist["year"] = DateFormat("yyyy")
+                                    .format(DateTime.now());
+                                orderlist["time"] = DateFormat("h:mm aa")
+                                    .format(DateTime.now());
+                                orderlist["timestamp"] = FieldValue.serverTimestamp();
+
+
+                                FirebaseFirestore.instance
+                                    .collection('orderlist')
+                                    .doc(widget.reference)
+                                    .set(orderlist)
+                                    .whenComplete(() {
+                                      //success = true;
+
+                                     // if (mounted) {
+                                        Navigator.of(context).pop(); // Close processing dialog
+                                        showSuccessDialog1(widget.netimage, widget.reference, widget.mytitle);
+                                     // }
+                                    });
       }
       } catch (e) {
       print("Error: $e");
